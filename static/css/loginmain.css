@@ -1,0 +1,2490 @@
+@font-face {
+    font-family: OpenSansRegular;
+    src: url(./OpenSans-Regular.ttf);
+  }
+  @font-face {
+    font-family: OpenSansSemiBold;
+    src: url(./OpenSans-SemiBold.ttf);
+  }
+  @font-face {
+    font-family: OpenSansBold;
+    src: url(./OpenSans-Bold.ttf);
+  }
+  @font-face {
+    font-family: segReg;
+    src: url(./Segoe-reg.woff);
+  }
+  @font-face {
+    font-family: segBold;
+    src: url(./SegoeBold.woff);
+  }
+  
+  :root {
+    --darkGray: #343434;
+    --blue: #5663fe;
+    --darkBlue: #354052;
+    --lightBlue: #f4f7fd;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: openSansRegular;
+  }
+  h1 {
+    font-family: openSansBold;
+    font-size: 25px;
+    line-height: 56px;
+    margin: 0;
+  }
+  h2 {
+    font-family: openSansBold;
+    font-size: 20px;
+    line-height: 27px;
+    margin: 0;
+  }
+  h3 {
+    font-family: openSansSemiBold;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0;
+  }
+  h4 {
+    font-family: openSansBold;
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0;
+  }
+  h5 {
+    font-size: 14px;
+    line-height: 19px;
+    margin: 0;
+  }
+  p {
+  }
+  a {
+    text-decoration: none;
+    color: var(--blue);
+  }
+  a:hover {
+    color: inherit;
+  }
+  ul,
+  li {
+    list-style: none;
+  }
+  
+  .myBtn {
+    width: 350px;
+    height: 61px;
+    font-size: 16px;
+    border-radius: 12px;
+    background: #5663fe;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    padding: 20px 0px;
+  }
+  /* width */
+  ::-webkit-scrollbar {
+    width: 3px;
+    height: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--blue);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: red;
+  }
+  /* =================== sign-page-css ================= */
+  .wrapper {
+    max-width: 1366px;
+    min-width: 100%;
+  }
+  
+  .sign-Left {
+    width: 50%;
+  }
+  .sign-Left img {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+  .sign-Right {
+    width: 50%;
+    padding: 90px 75px 0px 96px;
+  }
+  .rightContent .form-control {
+    width: 50%;
+    height: 59px;
+    border-radius: 6px;
+    border: 1px solid var(--blue);
+    margin: 0 0 25px 0px;
+    font-size: 15px;
+  }
+  .rightContent span#basic-addon1 {
+    width: 14%;
+    height: 59px;
+    border-radius: 6px 0 0 6px;
+    border: 1px solid var(--blue);
+    background: var(--lightBlue);
+    padding: 22px 25px;
+    margin: 0 0 25px 0px;
+    min-width: 75px;
+  }
+  
+  .rightContent span#basic-addon1::placeholder {
+    color: var(--darkGray);
+    opacity: 0.5;
+  }
+  
+  .form-control:focus,
+  .form-control:active {
+    box-shadow: none;
+    outline: none;
+  }
+  .rightheader h2 {
+    padding-bottom: 40px;
+  }
+  .rightheader {
+    padding-bottom: 48px;
+  }
+  .rightheader h5 {
+    color: #707070;
+  }
+  .rememberMeBox {
+    padding-bottom: 48px;
+  }
+  .rememberMeBox label {
+    font-size: 16px;
+    line-height: 22px;
+    cursor: pointer;
+    color: var(--darkBlue);
+  }
+  .rememberMeBox a {
+    font-size: 14px;
+    line-height: 19px;
+    color: var(--blue);
+  }
+  .rememberMeBox a:hover {
+    color: var(--blue);
+  }
+  .sign-btn button {
+    font-family: openSansBold;
+    border: none;
+  }
+  .sign-btn button:hover {
+    color: #fff;
+  }
+  .form-check-input:checked[type="checkbox"] {
+    box-shadow: none;
+  }
+  .form-check-input[type="checkbox"] {
+    box-shadow: none;
+    border-radius: 3px;
+  }
+  
+  /* =================== sign-page-css end ================= */
+  
+  /* =================== ownsers-page-css  ================= */
+  .owners-mainSec {
+    background: var(--lightBlue);
+  }
+  aside {
+    width: 61px;
+    background: var(--blue);
+    border-radius: 0px 34px 34px 0;
+    min-height: 100vh;
+  }
+  aside ul {
+    padding: 0;
+    text-align: center;
+  }
+  aside ul a {
+    display: block;
+  }
+  a.menuIcon {
+    margin-top: 51.8px;
+  }
+  li.blockList {
+    margin-top: 40px;
+  }
+  .active {
+    background-image: url(../img/sidebarBgActive.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: cover;
+    height: 37px;
+    padding: 4px;
+  }
+  
+  li.page-item.active {
+    padding: 0;
+  }
+  button.menuIcon {
+    background: none;
+    border: none;
+    margin-top: 61.8px;
+    margin-bottom: 80.8px;
+  }
+  
+  li.ownersList {
+    margin-top: 40px;
+  }
+  li.branchesList {
+    margin-top: 40px;
+  }
+  li.vendorsList {
+    margin-top: 40px;
+  }
+  li.ownersList span {
+    padding-left: 6px;
+  }
+  
+  .visible {
+    min-width: 132px;
+  }
+  .tglClass {
+    text-align: left;
+    padding-left: 16px;
+    padding-top: 0;
+  }
+  .tglClassTwo {
+    width: calc(100% - 132px) !important;
+  }
+  .forPadding {
+    padding: 51.8px 8.6px;
+  }
+  
+  aside span {
+    display: none;
+  }
+  aside.visible span {
+    color: #fff;
+    padding-top: 5px;
+    display: inline-block;
+    transform: translate(0px, 3px);
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .owners-rightSec {
+    width: calc(100% - 61px);
+  }
+  
+  .owners-rightSec {
+    padding: 34px 44px;
+    background: var(--lightBlue);
+  }
+  .owners-rightSec {
+    padding: 34px 44px;
+  }
+  .owners-rightSec .navbar {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .owners-rightSec .navbar img.joh {
+    border: 1px solid var(--blue);
+    border-radius: 50%;
+    padding: 2px;
+    min-width: 40px;
+    max-width: 55px;
+  }
+  .btn:focus,
+  .btn:active {
+    box-shadow: none;
+  }
+  span.userText {
+    font-size: 14px;
+    line-height: 19px;
+    color: #343434;
+    padding: 0 10.6px 0 9.4px;
+  }
+  .icon-input {
+    position: relative;
+    width: 55%;
+  }
+  .icon-input input {
+    width: 100%;
+    height: 55px;
+    padding: 0 27px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 5px #ccc;
+    border-radius: 11px;
+    font-size: 14px;
+    line-height: 19px;
+    color: var(--blue);
+  }
+  .icon-input input::placeholder {
+    font-size: 14px;
+    line-height: 19px;
+    color: #707070;
+    opacity: 0.7;
+  }
+  .icon-input i {
+    position: absolute;
+    right: 28px;
+    top: 20px;
+    color: var(--blue);
+    cursor: pointer;
+  }
+  
+  .owner-TextMain {
+    padding: 25px 0 23px 0;
+    align-items: center;
+  }
+  .owner-TextMain h3 {
+    font-family: OpenSansSemiBold;
+    color: #343434;
+    line-height: 24px;
+  }
+  .owner-TextMain a {
+    width: 201px;
+    height: 40px;
+    font-size: 14px;
+    font-family: OpenSansSemiBold;
+    padding: 9px 0px;
+  }
+  .owner-TextMain a {
+    color: #fff;
+  }
+  .ownerpage-table {
+    box-shadow: 0 0 5px #ccc;
+    padding: 13px 53px 15px 28px;
+    border-radius: 20px;
+    background: #fff;
+  }
+  .ownerpage-table .table {
+    margin: 0;
+    text-align: center;
+    font-size: 14px;
+    color: #343434;
+  }
+  .ownerpage-table .table th {
+    color: var(--blue);
+    font-size: 16px;
+    line-height: 22px;
+    font-family: OpenSansSemiBold;
+    padding-top: 0;
+    padding-bottom: 16px;
+  }
+  .ownerpage-table tr {
+    height: 64px;
+    border-radius: 8px;
+    vertical-align: middle;
+  }
+  .editownerPage-table {
+    box-shadow: none;
+    padding: 0;
+  }
+  .table-striped > tbody > tr:nth-of-type(odd) > * {
+    background: var(--lightBlue);
+    box-shadow: none;
+    color: #343434;
+  }
+  .firstTd {
+    border-radius: 8px 0 0 8px;
+  }
+  .lastTd {
+    border-radius: 0px 8px 8px 0px;
+  }
+  .lastTd button {
+    border: none;
+    background: transparent;
+  }
+  .lastTd img {
+    margin: 0 2px;
+  }
+  
+  .ownerpage-table .myBtn {
+    width: 134px;
+    height: 33px;
+    font-size: 14px;
+    padding: 6px 0px;
+  }
+  .ownerpage-table .myBtn:hover {
+    color: #fff;
+  }
+  .pagination-sec {
+    padding: 14px 0px;
+  }
+  .pagination-sec .page-link {
+    margin-right: 6px;
+    border-radius: 4px;
+    border: none;
+    height: 20px;
+    width: 20px;
+    font-size: 12px;
+    padding: 2px 7px;
+    color: var(--blue);
+    cursor: pointer;
+  }
+  .pagination-sec .page-link:focus {
+    box-shadow: none;
+    outline: none;
+  }
+  .ownerpage-table .modal-header {
+    border: none;
+  }
+  .ownerpage-table .modal-header {
+    border: none;
+  }
+  .ownerpage-table .modal-header .btn-close {
+    padding: 23px 23px 0 0;
+    margin: 0;
+    font-size: 12px;
+    color: #343434;
+    opacity: 1;
+  }
+  .ownerpage-table .modal-header .btn-close:focus {
+    box-shadow: none;
+  }
+  .modalTable {
+    text-align: left !important;
+  }
+  .ownerpage-table .modal-body {
+    padding: 0px 29px 40px;
+  }
+  .ownerpage-table .modal-content {
+    border-radius: 20px;
+  }
+  .modalTrFirst {
+    padding: 0 34px !important;
+  }
+  .modalTd {
+    font-size: 15px;
+    line-height: 20px;
+    color: #19191980 !important;
+    padding-right: 0px !important;
+    width: 65%;
+  }
+  .modaltdTwo {
+    font-size: 15px;
+    line-height: 20px;
+    color: var(--blue) !important;
+    padding: 0 7px 0 0px !important;
+    padding-left: 0px !important;
+    width: 35%;
+  }
+  .commentTd {
+    width: auto;
+  }
+  .modalTd img {
+    padding: 0 14px 0 0px !important;
+  }
+  .modalTable > tbody > tr > * {
+    padding: 0 34px;
+    height: 51px;
+  }
+  .modalTable > tbody > tr {
+    height: 51px;
+  }
+  .branchDetailModal .modal-content {
+    width: 100%;
+    border: none;
+    outline: none;
+  }
+  
+  .branchDetailModal .modal-content .modal-body h2 {
+    padding-bottom: 24px;
+  }
+  
+  /* =================== owners-page-css end ================= */
+  
+  /* =================== add owner-page-css start ================= */
+  .addOwner-sec {
+    padding: 43px 103px 0 102px;
+  }
+  .addOwner-box {
+    background: #fff;
+    padding: 32px 85px;
+    border-radius: 20px;
+    width: 806px;
+    box-shadow: 0 0 10px #ccc;
+    margin: 0 auto;
+  }
+  .addOwner-box h2 {
+    color: var(--darkGray);
+    padding-bottom: 32px;
+  }
+  .ownerInputSec span#basic-addon1 {
+    width: auto;
+    max-width: 11%;
+  }
+  
+  .addBranchDetail table {
+    background: var(--lightBlue);
+    margin: 0;
+    border-radius: 6px;
+  }
+  
+  .addBranchDetail .branchDetailTr th {
+    color: #191919;
+    opacity: 0.5;
+    font-family: OpenSansRegular;
+    font-weight: 400;
+    padding: 0 0 10px 25px;
+  }
+  .addBranchDetail .branchDetailTr td {
+    color: var(--blue);
+    padding: 0 0 10px 25px;
+    white-space: nowrap;
+    width: 350px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-right: 25px;
+  }
+  .addBranchDetail .lastTd {
+    padding: 20.3px 13.6px 0;
+    width: 15%;
+  }
+  .plusIconsec {
+    padding: 32px 0 0 0;
+  }
+  .plusIconsec button {
+    background: none;
+    border: none;
+    font-size: 15px;
+    font-family: OpenSansSemiBold;
+  }
+  .plusIconsec img {
+    margin-right: 8px;
+    margin-top: -5px;
+  }
+  .addOwnerBtnsSec {
+    padding: 51px 0 0 190px;
+  }
+  .addOwnerBtnsSec button {
+    width: 258px;
+    height: 61px;
+    border: none;
+    outline: none;
+    font-family: OpenSansBold;
+    margin-right: 30px;
+  }
+  .addOwnerBtnsSec button.cancelBtn {
+    background: transparent;
+    color: var(--blue);
+    border: 1px solid var(--blue);
+  }
+  .addBranchModal .modal-header {
+    border-bottom: none;
+  }
+  .addBranchModal {
+    max-width: 806px;
+  }
+  .addBranchModal .modal-body {
+    padding: 62px 84px;
+  }
+  .addBranchModal .modal-content {
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 5px #ccc;
+  }
+  
+  .addBranchModal input.form-control {
+    height: 59px;
+    border-radius: 6px;
+    border: 1px solid var(--blue);
+    color: var(--blue);
+    padding-left: 20px;
+  }
+  .addBranchModal input::placeholder {
+    font-size: 15px;
+    line-height: 20px;
+    color: #191919;
+    opacity: 0.5;
+  }
+  .addBranchModal .input-group {
+    margin-bottom: 20px;
+  }
+  .addBranchModal span#basic-addon2 {
+    max-width: 12%;
+    min-width: 12%;
+    height: 59px;
+    border-radius: 6px 0 0 6px;
+    border: 1px solid var(--blue);
+    background: var(--lightBlue);
+    padding: 16px 11px 10px 27px;
+  }
+  .addBranchBtnSec {
+    padding: 28px 0 0 0;
+  }
+  .addBranchBtnSec .cancelBtn {
+    width: 206px !important;
+    height: 49px;
+    padding: 13px 0px;
+  }
+  .addBranchBtnSec .addBtn {
+    width: 206px !important;
+    height: 49px;
+    background: var(--blue);
+    padding: 13px 0px;
+  }
+  .addBranchModal h2 {
+    padding-bottom: 42px;
+  }
+  
+  /* =================== add owner-page-css end ================= */
+  
+  /* =================== property-page-css start ================= */
+  .descText {
+    max-width: 150px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: right;
+  }
+  .urlText {
+    max-width: 185px;
+    white-space: normal;
+    text-overflow: initial;
+    text-align: center;
+  }
+  .descText a {
+    text-decoration: underline;
+  }
+  img.addPropertyLogo {
+    max-width: 45px;
+    min-width: 35px;
+  }
+  .brandingColorBox button {
+    border: none;
+  }
+  .dltModal.modal-dialog {
+    max-width: 431px;
+  }
+  .dltModal.modal-dialog p {
+    font-size: 14px;
+    line-height: 17px;
+    color: #707070;
+    padding-bottom: 20px;
+  }
+  .dltModal.modal-dialog .modal-body {
+    padding: 10px 45px 35px;
+  }
+  .dltModal.modal-dialog .modal-body h2 img {
+    margin: 12px 0 4px 0;
+  }
+  .dltModal.modal-dialog .modal-body h2 {
+    padding: 0 0 5px 0;
+  }
+  .dltModal.modal-dialog .modal-content {
+    max-height: 364px;
+  }
+  .dltModal.modal-dialog .modal-header {
+    padding: 8px 15px 0px;
+  }
+  .dltModal.modal-dialog .modal-body button {
+    border: none;
+    width: 248px;
+    height: 47px;
+    font-size: 16px;
+    font-family: OpenSansBold;
+  }
+  .fileSection {
+    margin-bottom: 47px;
+  }
+  .fileSection h5 {
+    font-family: OpenSansSemiBold;
+  }
+  .fileSection .file-input {
+    display: inline-block;
+    text-align: center;
+    background-image: url(../img/addpropetyLogoBg.png);
+    padding: 40px 16px 20px;
+    position: relative;
+    border-radius: 3px;
+    background-repeat: no-repeat;
+    background-size: 115px 115px;
+    margin-bottom: 10px;
+  }
+  .fileSection .file-input > [type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 10;
+    cursor: pointer;
+  }
+  .fileSection .file-input > .button {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0px 10px 15px 20px;
+    border-radius: 2px;
+    margin-right: 8px;
+  }
+  .fileSection span.label.uploadFiletext {
+    font-size: 12px;
+    line-height: 18px;
+    color: #3f5856;
+    opacity: 1;
+  }
+  textarea {
+    resize: none;
+  }
+  
+  textarea#exampleFormControlTextarea1 {
+    height: auto;
+    padding: 20px;
+    border-radius: 0 6px 6px 0;
+    padding-left: 12px;
+  }
+  .addPropertyForm span.descInput {
+    width: auto !important;
+    height: auto !important;
+  }
+  .addPropertyForm span#basic-addon1 .descImg {
+    margin-top: -70px;
+  }
+  .brandColorBox {
+    padding: 0px 0px 13px;
+  }
+  .brandColorBox button {
+    border: none;
+    margin: 10px 6px 10px 0;
+  }
+  h5.h5Text {
+    color: #000;
+  }
+  h5.unitText {
+    font-family: OpenSansSemiBold;
+    margin-bottom: 12px;
+    font-size: 15px;
+  }
+  .uploadSec {
+    background: var(--lightBlue);
+    height: 153px;
+    text-align: center;
+    padding-top: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid var(--blue);
+  }
+  .uploadSec .file-input {
+    display: inline-block;
+    position: relative;
+    border-radius: 3px;
+  
+    margin-bottom: 10px;
+  }
+  .uploadSec .file-input > [type="file"] {
+    position: absolute;
+    top: 49px;
+    left: 3px;
+    width: 95%;
+    height: 35%;
+    opacity: 0;
+    z-index: 10;
+    cursor: pointer;
+  }
+  
+  .uploadSec .file-input > .button {
+    display: inline-block;
+    padding: 0px 10px 15px 20px;
+    border-radius: 2px;
+    margin-right: 8px;
+  }
+  .uploadSec span.label.uploadFiletext {
+    font-size: 12px;
+    line-height: 18px;
+    opacity: 1;
+    width: 84px;
+    height: 26px;
+    background: var(--blue);
+    color: #fff;
+    border-radius: 6px;
+    display: inline-block;
+    padding: 5px 0px;
+    font-family: OpenSansSemiBold;
+  }
+  .plusIconSecTwo .addUnitBtn {
+    margin: 0 30px;
+    font-size: 15px;
+    color: var(--darkGray);
+    font-family: OpenSansSemiBold;
+  }
+  .plusIconSecTwo .addOwnerBtn {
+    margin: 0 20px 0px 35px;
+  }
+  
+  .addPropertyBtnSec {
+    padding: 51px 0px 51px 230px;
+  }
+  .editFileSection {
+    height: 170px;
+  }
+  .editFileSection .file-input {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    border-radius: 3px;
+  }
+  .editFileSection .file-input > [type="file"] {
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    width: 15%;
+    height: 15%;
+    opacity: 0;
+    z-index: 10;
+    cursor: pointer;
+  }
+  .editFileSection .file-input > .button {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0px 10px 5px 20px;
+    border-radius: 2px;
+  }
+  .editFileSection span.label.uploadFiletext {
+    font-size: 12px;
+    line-height: 18px;
+    color: #3f5856;
+    opacity: 1;
+  }
+  .editLogo {
+    max-width: 126px;
+    min-width: 100px;
+  }
+  .editClick {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+  }
+  .editFileSection .h5Text {
+    font-family: OpenSansSemiBold;
+  }
+  
+  h5.ownerText {
+    margin: 23px 0 13px 0px;
+  }
+  .modalCommentRow {
+    padding: 0 !important;
+  }
+  
+  .lastCommntRow {
+    background: var(--lightBlue);
+    padding: 13px 28px 5px 34px;
+    border-radius: 6px;
+  }
+  .lastCommntRow img {
+    margin-right: 13px;
+  }
+  .lastCommntRow h5 {
+    font-size: 14px;
+    color: var(--darkGray);
+  }
+  .lastCommntRow p {
+    font-size: 14px;
+    color: var(--blue);
+    padding-left: 38px;
+    padding-top: 3px;
+  }
+  select.form-select {
+    height: 59px;
+    font-size: 14px;
+    color: #191919b3;
+    border: 1px solid var(--blue);
+    padding-left: 17px;
+    border-radius: 0 6px 6px 0px !important;
+  }
+  select.form-select:focus {
+    box-shadow: none;
+    border: 1px solid var(--blue);
+  }
+  .conditionCheck {
+    padding-bottom: 0;
+  }
+  .conditionCheck label {
+    font-size: 15px;
+    line-height: 20px;
+  }
+  .conditionCheck label span {
+    color: var(--blue);
+  }
+  img.phoneIcon {
+    width: 19px !important;
+    height: 19px !important;
+  }
+  .viewBtn {
+    width: 88px !important;
+    height: 33px !important;
+  }
+  .pdfSec button {
+    border: none;
+    outline: none;
+  }
+  .propertyDetailSec {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 34px;
+  }
+  .propertyDetailSec div {
+    width: 31.3%;
+    background: #fff;
+    height: 162px;
+    box-shadow: 0 0 5px whitesmoke;
+    border-radius: 11px;
+    border: none;
+    padding: 42px 36px;
+  }
+  .pdsImgSec {
+    position: relative;
+  }
+  .pdsImgSec img {
+    position: absolute;
+  }
+  .pdInner {
+    left: 22px;
+    top: 18px;
+  }
+  h1.display-1 {
+    color: var(--blue);
+    font-size: 40px;
+    font-family: OpenSansSemiBold;
+    line-height: 55px;
+    padding-left: 105px;
+  }
+  h1.display-1 p {
+    color: var(--darkGray);
+    font-size: 16px;
+    line-height: 22px;
+    font-family: OpenSansSemiBold;
+  }
+  .afterInputPlus {
+    align-self: center;
+    margin-left: 23px !important;
+    margin-top: -20px;
+  }
+  .afterInputPlus button {
+    border: none;
+    background: none;
+  }
+  .afterInputPlus img {
+    vertical-align: middle;
+  }
+  .unitLink a {
+    color: var(--darkGray);
+  }
+  .ownersInpuTsec {
+    margin-bottom: 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .ownersInpuTsec .icon-input input {
+    height: 59px;
+    border: 1px solid var(--blue);
+    border-radius: 6px !important;
+    box-shadow: none;
+  }
+  .ownersInpuTsec div {
+    width: 27%;
+  }
+  .ownersInpuTsec .oIButtonSec {
+    width: 15%;
+  }
+  .ownersInpuTsec .form-select {
+    border-radius: 6px !important;
+  }
+  .ownersInpuTsec button {
+    border: none;
+    width: 155px;
+    height: 51px;
+    padding: 4px 0px;
+    margin-left: 20px;
+  }
+  
+  /* =================== property-page-css end ================= */
+  .detailSec {
+    background: var(--lightBlue);
+    border-radius: 6px;
+    padding: 30px 13.6px 20px 25px;
+    margin-bottom: 16px;
+  }
+  .detailContent {
+    display: flex;
+  }
+  .detailContent h6 {
+    margin-bottom: 16px;
+    font-size: 14px;
+    line-height: 19px;
+  }
+  .detailContentLeft {
+    width: 43%;
+  }
+  .detailContentLeft h6 {
+    color: var(--darkGray);
+  }
+  .detailContentRight {
+    width: 57%;
+  }
+  .detailContentRight h6 {
+    color: var(--blue);
+  }
+  .dltForDetail {
+    padding: 0 !important;
+    overflow-x: hidden !important;
+  }
+  /* =============== select pass & condu page css ====== */
+  
+  .selectPassSec {
+    background: var(--blue);
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    padding-top: 0;
+  }
+  .selectPassContent {
+    background: #fff;
+    width: 100%;
+    max-width: 802px;
+    padding: 74px 80px;
+    border-radius: 20px;
+  }
+  .selectPassContent h1 {
+    font-size: 19px;
+  }
+  .selectPassContent .rightheader h2 {
+    padding-bottom: 18px;
+  }
+  .guestInput .form-select {
+    border-radius: 6px !important;
+    color: var(--darkGray);
+    margin-bottom: 40px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+  .selectPassContent > .rightheader {
+    padding-bottom: 22px;
+  }
+  .conduSec {
+    padding: 81px 44px;
+  }
+  .condu-header {
+    padding: 0 166px;
+  }
+  .condu-header h2 {
+    font-size: 22px;
+    line-height: 30px;
+    font-family: segBold;
+  }
+  .condu-header p {
+    font-size: 14px;
+    line-height: 19px;
+    color: #707070;
+    font-family: segReg;
+  }
+  .condu-body h3 {
+    color: var(--blue);
+    margin-bottom: 20px;
+    font-family: segReg;
+    font-weight: 600;
+  }
+  .condu-double-input {
+    display: flex;
+    justify-content: space-between;
+  }
+  .condu-double-input .input-group {
+    width: 48.7%;
+  }
+  .condu-double-input span#basic-addon1 {
+    width: 13%;
+    min-width: 75px;
+    padding: 22px 25px;
+  }
+  .guesth3Text {
+    margin-top: 5px;
+    margin-bottom: 0 !important;
+  }
+  .guestP {
+    font-size: 14px;
+    line-height: 19px;
+    color: #707070;
+    font-family: segReg;
+  }
+  .guestContent {
+    background: var(--lightBlue);
+    padding: 22px 43px;
+    border-radius: 6px;
+  }
+  .guestContent .form-control {
+    width: 80%;
+    height: 59px;
+    border-radius: 6px;
+    border: 1px solid var(--blue);
+    margin: 0 0 25px 0px;
+    font-size: 15px;
+    background: transparent;
+  }
+  .guestContent span#basic-addon1 {
+    background: #fff;
+  }
+  .guestContentHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 13px;
+  }
+  .guestContentHeader h4 {
+    color: var(--blue);
+    font-family: segReg !important;
+    font-weight: 600;
+  }
+  .radioReg {
+    margin-top: -14px;
+  }
+  .radioReg h5 {
+    font-family: segReg !important;
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+  .radioReg label {
+    margin: 0 14px;
+    font-family: segReg;
+    font-size: 14px;
+  }
+  #youth {
+    margin-left: 54px;
+  }
+  .adGuestSec {
+    margin-top: 24px;
+    margin-bottom: 30px;
+  }
+  .adGuestSec button {
+    width: 141px;
+    height: 40px;
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  .adGuestSec button img {
+    margin-right: 5px;
+  }
+  .parkingNote {
+    background: var(--lightBlue);
+    padding: 8px 20px;
+    color: var(--blue);
+    font-family: segReg;
+    margin-top: 28px;
+    margin-bottom: 24px;
+    border-radius: 6px;
+  }
+  .condu-triple-input {
+    display: flex;
+    justify-content: space-between;
+  }
+  .condu-triple-input .input-group {
+    width: 31.7%;
+  }
+  .condu-triple-input span#basic-addon1 {
+    min-width: 75px !important;
+    padding: 0 26px;
+  }
+  .guestContent .form-control {
+    width: 30% !important;
+  }
+  .emergncyH4Text {
+    color: var(--darkGray);
+    line-height: 21px;
+    margin-bottom: 15px;
+    font-family: segReg;
+    font-weight: 600;
+  }
+  .btn-toggle button {
+    min-width: 86px;
+    height: 31px;
+    border: none;
+    background: var(--lightBlue);
+    font-size: 14px;
+    margin-bottom: 45px;
+  }
+  .btn-toggle .yesBtn {
+    border-radius: 6px 0 0 6px;
+  }
+  .btn-toggle .noBtn {
+    border-radius: 0px 6px 6px 0px;
+  }
+  .btn-check:active + .btn-primary,
+  .btn-check:checked + .btn-primary,
+  .btn-primary.active,
+  .btn-primary:active,
+  .show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: var(--blue);
+    border: none;
+    box-shadow: none;
+  }
+  .btn-check:active + .btn-primary:focus,
+  .btn-check:checked + .btn-primary:focus,
+  .btn-primary.active:focus,
+  .btn-primary:active:focus,
+  .show > .btn-primary.dropdown-toggle:focus {
+    box-shadow: none;
+  }
+  .guestFormCheck {
+    font-family: segReg;
+    font-weight: 600;
+    margin-bottom: 132px;
+  }
+  .signSec {
+    color: var(--darkGray);
+    font-family: segReg;
+    font-weight: 600;
+  }
+  .signPlace {
+    height: 1px;
+    min-width: 617px;
+    width: 50%;
+    background: var(--darkGray);
+    margin-bottom: 16.5px;
+  }
+  .paymentText {
+    color: var(--darkGray) !important;
+    font-family: segReg;
+    font-weight: 600;
+  }
+  .paymentContent .guestContentHeader h4 {
+    color: var(--darkGray);
+  }
+  
+  .subTotalHeader h4 {
+    font-family: segBold !important;
+  }
+  .amountDueSec {
+    background: #fff;
+    padding: 15px 20px !important;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 23px;
+    margin-top: 20px;
+    color: var(--blue);
+  }
+  .amountDueSec h4 {
+    font-family: segReg;
+    font-weight: 600;
+  }
+  .addressInput span#basic-addon1 {
+    min-width: 75px;
+    padding: 22px 25px;
+    max-width: 75px;
+  }
+  .createBtn {
+    margin-top: 57px;
+  }
+  .createBtn button {
+    min-width: 350px;
+    min-height: 51px;
+    font-size: 16px;
+  }
+  .guestLastH3 {
+    margin-top: 19px;
+  }
+  .condu-double-input .form-control {
+    width: 30% !important;
+  }
+  .uploadCsvSec {
+    margin-top: 70px;
+    min-height: 440px;
+    display: grid;
+    place-items: center;
+    padding: 25px;
+  }
+  .uploadCsvSec .uploadSec {
+    border: none;
+    background: none;
+    height: auto;
+    padding: 0;
+    margin: 0;
+  }
+  .uploadCsvSec .uploadSec h3 {
+    font-family: segReg;
+    font-weight: 600;
+    color: #707070;
+    margin-top: 10px;
+  }
+  .uploadCsvSec .uploadSec .file-input > [type="file"] {
+    position: absolute;
+    top: 158px;
+    left: 0px;
+    width: 100%;
+    height: 20%;
+    opacity: 0;
+    z-index: 10;
+    cursor: pointer;
+  }
+  .uploadCsvSec .uploadSec span.label.uploadFiletext {
+    font-size: 14px;
+    line-height: 19px;
+    width: 201px;
+    height: 40px;
+    padding: 12px 0px;
+    border-radius: 8px;
+    margin-top: 15px;
+  }
+  .uploadCsvSec .uploadSec .file-input {
+    margin: 0;
+  }
+  h6.uploadFileMain button {
+    border: none;
+    background: none;
+  }
+  .csvBorder {
+    width: 100%;
+    padding: 90px 0;
+    margin: 0;
+    border: 1px dotted var(--blue);
+    border-radius: 13px;
+  }
+  .statusCancel {
+    background: red;
+  }
+  .extraMenuBar {
+    display: none;
+  }
+  .mobSideBar {
+    display: none;
+  }
+  
+  /* =============== select pass & condu page css end ====== */
+  @media (min-width: 1400px) {
+    .wrapper {
+      max-width: 1920px;
+    }
+    .sign-Main {
+      min-height: 100vh;
+    }
+    .branchDetailModal {
+      max-width: 100%;
+      padding: 0 200px;
+    }
+    .ownerpage-table .modal-body {
+      padding: 0px 50px 50px;
+    }
+    .addOwner-box {
+      width: 100%;
+    }
+    .addOwnerBtnsSec {
+      text-align: center;
+      padding: 51px 0 0px 0;
+    }
+    .addBranchModal {
+      max-width: 100%;
+      padding: 0 200px;
+    }
+    .addOwner-sec {
+      padding: 43px 0px 0 0px;
+    }
+    .dltModal.modal-dialog {
+      max-width: 100%;
+      padding: 0 500px;
+    }
+    .rightContent span#basic-addon1 {
+      width: auto;
+    }
+  
+    .addBranchModal span#basic-addon2 {
+      max-width: auto;
+      min-width: auto;
+    }
+    .selectPassContent {
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 1200px) {
+    .sign-Right {
+      padding: 50px 35px 50px 35px;
+    }
+    .owners-rightSec {
+      padding: 34px 20px;
+    }
+    h3 {
+      font-size: 16px;
+    }
+    .ownerpage-table {
+      padding: 29px 15px 15px 15px;
+    }
+    .addOwner-sec {
+      padding: 43px 120px 0 120px;
+    }
+    .addOwner-box {
+      width: 100%;
+      padding: 32px 45px;
+    }
+    .addOwnerBtnsSec {
+      text-align: center;
+      padding: 51px 0 0 0px;
+    }
+    .dltModal.modal-dialog {
+      max-width: 40%;
+    }
+    .branchDetailModal {
+      max-width: 80%;
+    }
+    .ownerpage-table .modal-header {
+      padding: 8px;
+    }
+    h1.display-1 {
+      font-size: 30px;
+    }
+    h1.display-1 p {
+      font-size: 14px;
+    }
+    .ownersInpuTsec button {
+      width: 135px;
+      margin-left: 0px;
+    }
+    .ownersInpuTsec div {
+      width: 28%;
+    }
+    .ownersInpuTsec .oIButtonSec {
+      width: 14%;
+    }
+    .ownerInputSec span#basic-addon1 {
+      min-width: 70px;
+    }
+    .selectPassSec {
+      padding-bottom: 0 !important;
+      padding-top: 5px !important;
+    }
+    .selectPassContent {
+      padding: 60px 55px;
+    }
+    .uploadCsvSec {
+      margin-top: 50px;
+      min-height: 350px;
+    }
+  }
+  @media (max-width: 992px) {
+    h1 {
+      font-size: 20px;
+    }
+    h2 {
+      font-size: 17px;
+    }
+    .sign-Right {
+      padding: 30px 15px 20px 15px;
+    }
+    .rightheader h2 {
+      padding-bottom: 30px;
+    }
+    .myBtn {
+      width: 300px;
+      height: 50px;
+      padding: 14px 0px;
+    }
+    .rightContent span#basic-addon1 {
+      padding: 15px;
+      margin: 0 0 25px 0px;
+      min-width: 14%;
+    }
+    .rememberMeBox label {
+      font-size: 15px;
+      line-height: 22px;
+    }
+    .owner-TextMain a {
+      width: 185px;
+      height: 35px;
+      padding: 8px 0px;
+      font-size: 13px;
+    }
+  
+    .icon-input input {
+      height: 40px;
+      font-size: 13px;
+    }
+    .icon-input input::placeholder {
+      font-size: 13px;
+    }
+    .icon-input i {
+      top: 13px;
+      right: 13px;
+    }
+    span.userText {
+      font-size: 13px;
+    }
+    .ownerpage-table .table th {
+      font-size: 14px;
+    }
+    .ownerpage-table .table {
+      font-size: 13px;
+    }
+    .ownerpage-table .myBtn {
+      width: 110px;
+      height: 25px;
+      font-size: 13px;
+      padding: 3px 0px;
+    }
+    button#dropdownPowerOffBtn {
+    }
+    button#dropdownPowerOffBtn img {
+    }
+    .ownerpage-table {
+      padding: 29px 10px 15px 10px;
+    }
+    aside.visible span {
+      font-size: 13px;
+    }
+    .branchDetailModal {
+      max-width: 100%;
+      padding: 0 50px;
+    }
+    .addOwnerBtnsSec button {
+      width: 160px;
+      height: 50px;
+      font-size: 14px;
+      margin-right: 5px;
+    }
+    .addOwner-box {
+      padding: 32px 20px;
+    }
+    .addBranchModal {
+      max-width: 100%;
+      padding: 0 100px;
+    }
+    .addBranchModal .modal-body {
+      padding: 45px 30px;
+    }
+    .addBranchModal span#basic-addon2 {
+      max-width: 14%;
+      min-width: 12%;
+      padding: 10px 10px 0 30px;
+    }
+    .addOwnerBtnsSec {
+      text-align: center;
+      padding: 30px 0 0 0px;
+    }
+    .addBranchBtnSec .addBtn {
+      width: 180px !important;
+      height: 45px;
+    }
+    .addBranchBtnSec .cancelBtn {
+      width: 180px !important;
+      height: 45px;
+    }
+    .dltModal.modal-dialog {
+      max-width: 60%;
+    }
+    tr.branchDetailTr th {
+      width: 40%;
+    }
+    .addBranchDetail .lastTd {
+      width: 20%;
+    }
+    .addOwner-sec {
+    }
+    .addBranchDetail .branchDetailTr th {
+      padding: 0 0 10px 10px;
+    }
+    .addBranchDetail .branchDetailTr th {
+      font-size: 14px;
+    }
+    .addBranchDetail .branchDetailTr td {
+      padding-right: 10px;
+      font-size: 14px;
+    }
+    .rightContent .form-control {
+      height: 45px;
+    }
+    .rightContent span#basic-addon1 {
+      height: 45px;
+    }
+    select.form-select {
+      height: 45px;
+    }
+    .editFileSection .file-input > .button {
+      padding: 0px 10px 5px 10px;
+    }
+    h1.display-1 {
+      font-size: 25px;
+      line-height: 40px;
+      padding-left: 90px;
+    }
+    h1.display-1 p {
+      font-size: 13px;
+      margin-bottom: 0;
+    }
+    .propertyDetailSec div {
+      padding: 35px 10px;
+      height: 135px;
+    }
+    .pdsImgSec img {
+      width: 70px;
+    }
+    .pdInner {
+      left: 20px;
+      top: 14px;
+      max-width: 30px;
+    }
+    .viewBtn {
+      width: 75px !important;
+      height: 30px !important;
+      padding: 6px 0 !important;
+    }
+    .ownersInpuTsec button {
+      width: 100px;
+      height: 45px;
+    }
+    .ownersInpuTsec .icon-input input {
+      height: 45px;
+    }
+    .ownerInputSec span#basic-addon1 {
+      min-width: 50px;
+    }
+    .selectPassSec {
+      padding: 5px 50px 0 50px !important;
+    }
+    .uploadCsvSec img {
+      width: 50px;
+    }
+    .condu-header {
+      padding: 10px 60px;
+    }
+    .condu-header h2 {
+      font-size: 20px;
+      line-height: 40px;
+    }
+    .condu-header p {
+      line-height: 24px;
+    }
+    .condu-double-input span#basic-addon1 {
+      min-width: 58px !important;
+      padding: 20px 18px !important;
+      max-width: 60px;
+    }
+    .guestContent {
+      padding: 22px 20px;
+    }
+    .condu-triple-input span#basic-addon1 {
+      min-width: 30px !important;
+      padding: 0 23px !important;
+      max-width: 70px;
+    }
+    .createBtn button {
+      min-width: 310px;
+      min-height: 45px;
+      font-size: 15px;
+    }
+    .adGuestSec button {
+      width: 130px;
+      height: 40px;
+    }
+    .adGuestSec button img {
+      margin-right: 5px;
+      padding: 11px 0px;
+    }
+    .radioReg h5 {
+      margin: 18px 0px;
+    }
+    .signSec {
+      margin-bottom: 40px;
+    }
+    .signPlace {
+      min-width: auto;
+    }
+    .condu-triple-input {
+      flex-direction: column;
+    }
+    .condu-triple-input .input-group {
+      width: 100%;
+    }
+  }
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 17px;
+    }
+    h2 {
+      font-size: 15px;
+    }
+    h5 {
+      font-size: 13px;
+    }
+    .myBtn {
+      width: 250px;
+      height: 40px;
+      padding: 11px 0px;
+      font-size: 14px;
+    }
+    .sign-Left {
+      width: 100%;
+    }
+    .sign-Right {
+      width: 100%;
+    }
+    .rightContent span#basic-addon1 {
+      width: auto;
+    }
+    .signInAddon span#basic-addon1 {
+      min-width: 8% !important;
+    }
+  
+    .rightheader {
+      padding-bottom: 30px;
+    }
+    .rightheader h2 {
+      padding-bottom: 20px;
+    }
+    .rememberMeBox label {
+      font-size: 14px;
+      line-height: 22px;
+    }
+    h3 {
+      font-size: 15px;
+    }
+    .icon-input input::placeholder {
+      font-size: 12px;
+    }
+    .icon-input input {
+      height: 36px;
+    }
+    .icon-input i {
+      top: 12px;
+      font-size: 14px;
+    }
+    .owners-rightSec .navbar img.joh {
+      max-width: 45px;
+    }
+  
+    .ownerpage-table {
+      padding: 20px 10px 5px 10px;
+      overflow-x: scroll;
+    }
+    .owners-rightSec {
+      padding: 34px 15px;
+    }
+    .owner-TextMain a {
+      width: 150px;
+      height: 30px;
+      padding: 6px 0px;
+    }
+    .dltModal.modal-dialog .modal-body {
+      padding: 10px 20px 20px;
+    }
+    .dltModal.modal-dialog .modal-header {
+      padding: 4px 15px 0px;
+    }
+    .dltModal.modal-dialog .modal-body button {
+      width: 200px;
+      height: 35px;
+      font-size: 14px;
+    }
+    .dltModal.modal-dialog {
+      max-width: 100%;
+      padding: 0 160px;
+    }
+    .branchDetailModal {
+      padding: 0 100px;
+    }
+    .branchDetailModal {
+      max-width: 100%;
+      padding: 0 40px;
+    }
+    .modalTd {
+      font-size: 13px;
+    }
+    .modalTd img {
+      width: 35px;
+      height: 20px;
+    }
+    .modaltdTwo {
+      font-size: 13px;
+    }
+    span#basic-addon1 img {
+      height: auto;
+    }
+    .plusIconsec button {
+      font-size: 14px;
+    }
+    .plusIconsec img {
+      margin-right: 5px;
+      width: 17px;
+    }
+    .addOwnerBtnsSec button {
+      height: 45px;
+      margin-right: 5px;
+      width: 120px;
+    }
+    .addBranchModal .modal-body {
+      padding: 30px 20px;
+    }
+    .addBranchModal span#basic-addon2 {
+      padding: 16px 20px;
+    }
+    .addBranchModal input.form-control {
+      height: 50px;
+    }
+    .addBranchModal span#basic-addon2 {
+      height: 50px;
+    }
+    .icon-input input::placeholder {
+      font-size: 12px;
+    }
+    .addBranchModal input::placeholder {
+      font-size: 12px;
+    }
+    .addBranchBtnSec .cancelBtn {
+      width: 150px !important;
+      height: 35px;
+      padding: 7px 0px;
+    }
+    .addBranchBtnSec .addBtn {
+      width: 150px !important;
+      height: 35px;
+      padding: 7px 0px;
+    }
+    .addOwnerBtnsSec {
+      padding: 25px 0 0 0px;
+    }
+    .addBranchModal {
+      padding: 0 60px;
+    }
+    .ownerpage-table .table th {
+      font-size: 12px;
+    }
+    .ownerpage-table .table {
+      font-size: 12px;
+    }
+    .ownerpage-table .myBtn {
+      width: 100px;
+      font-size: 12px;
+      padding: 4px 0px;
+    }
+    aside img {
+      width: 23px;
+    }
+    img.addPropertyLogo {
+      max-width: 34px;
+      min-width: 27px;
+    }
+    .descText {
+      max-width: 130px;
+    }
+    .plusIconSecTwo .addUnitBtn {
+      font-size: 13px;
+    }
+    select.form-select {
+      font-size: 13px;
+    }
+    .editLogo {
+      max-width: 100px;
+      min-width: 80px;
+    }
+    .editFileSection .file-input > [type="file"] {
+      top: 78px;
+      right: 22px;
+    }
+    .editFileSection {
+      height: 130px;
+    }
+    .rightContent .form-control::placeholder {
+      font-size: 12px;
+    }
+    h1.display-1 {
+      font-size: 22px;
+      line-height: 35px;
+      padding-left: 65px;
+    }
+    h1.display-1 p {
+      font-size: 12px;
+    }
+    .propertyDetailSec div {
+      padding: 30px 5px;
+      height: 120px;
+    }
+    .pdsImgSec img {
+      width: 55px;
+    }
+    .pdInner {
+      left: 16px;
+      top: 13px;
+      max-width: 24px;
+    }
+    .afterInputPlus img {
+      width: 30px;
+    }
+    .ownersInpuTsec button {
+      width: 70px;
+      height: 40px;
+      font-size: 13px;
+    }
+    .ownersInpuTsec .icon-input i {
+      top: 15px;
+      right: 10px;
+      font-size: 14px;
+    }
+    .ownersInpuTsec button {
+      margin-left: 0px;
+      width: 100%;
+    }
+    .ownersInpuTsec {
+      flex-direction: column;
+    }
+    .ownersInpuTsec div {
+      width: 100%;
+      margin: 5px 0px;
+    }
+    .ownersInpuTsec .oIButtonSec {
+      width: 45%;
+    }
+    .addOwner-sec {
+      padding: 43px 65px 0 65px;
+    }
+    .selectPassContent {
+      padding: 35px 25px;
+    }
+    .selectPassSec {
+      padding: 5px 30px 0 30px !important;
+    }
+    .selectPassContent h1 {
+      font-size: 17px;
+    }
+    .uploadCsvSec img {
+      width: 40px;
+    }
+    .uploadCsvSec .uploadSec span.label.uploadFiletext {
+      font-size: 13px;
+  
+      width: 180px;
+      height: 35px;
+      padding: 8px 0px;
+    }
+    .uploadCsvSec .uploadSec .file-input > [type="file"] {
+      top: 132px;
+    }
+    .guestP {
+      font-size: 13px;
+    }
+    .createBtn button {
+      min-width: 250px;
+      min-height: 40px;
+      font-size: 14px;
+    }
+    .createBtn {
+      margin-top: 40px;
+    }
+    .guestFormCheck {
+      margin-bottom: 100px;
+    }
+    h4 {
+      font-family: openSansBold;
+      font-size: 14px;
+    }
+    .condu-header {
+      padding: 10px 10px;
+    }
+    .condu-header h2 {
+      font-size: 18px;
+    }
+    .condu-header p {
+      font-size: 13px;
+    }
+    #youth {
+      margin-left: 40px;
+    }
+    .guestContent {
+      padding: 15px 10px;
+    }
+    .adGuestSec button {
+      width: 110px;
+      height: 37px;
+      font-size: 13px;
+    }
+    .condu-double-input {
+      flex-direction: column;
+    }
+    .condu-double-input .input-group {
+      width: 100%;
+    }
+    .condu-triple-input span#basic-addon1 {
+      min-width: 30px !important;
+      padding: 0 13px !important;
+      max-width: 50px;
+    }
+    .viewBtn {
+      width: 65px !important;
+    }
+    td.pdfSec img {
+      max-width: 22px;
+    }
+  }
+  @media (max-width: 576px) {
+    .rightheader img {
+      width: 55px;
+    }
+    h1 {
+      font-size: 15px;
+    }
+    h2 {
+      font-size: 13px;
+    }
+    h5 {
+      font-size: 12px;
+    }
+    .rightContent .form-control {
+      height: 40px;
+      font-size: 13px;
+    }
+    .rightContent span#basic-addon1 {
+      height: 40px;
+    }
+    .rememberMeBox label {
+      font-size: 13px;
+      line-height: 10px;
+    }
+  
+    .conditionCheck label {
+      font-size: 12px;
+      line-height: 20px;
+      padding-bottom: 5px;
+    }
+    .rememberMeBox a {
+      font-size: 13px;
+      line-height: 10px;
+    }
+    .rememberMeBox {
+      padding-bottom: 30px;
+    }
+    .conditionCheck {
+      padding-bottom: 5px;
+    }
+    .myBtn {
+      width: 200px;
+      height: 35px;
+      padding: 10px 0px;
+      font-size: 12px;
+    }
+    .rightContent span#basic-addon1 img {
+      max-width: 30px;
+      height: auto;
+    }
+    .owners-rightSec {
+      padding: 34px 10px;
+    }
+    .icon-input {
+      width: 100%;
+    }
+    .navbar-nav {
+      display: flex;
+      flex-direction: row;
+      padding-left: 1px;
+      margin-bottom: 0;
+      list-style: none;
+      margin-top: 70px;
+    }
+    .owner-TextMain {
+      padding: 10px 10px 23px 5px;
+    }
+    .owner-TextMain a {
+      width: 120px;
+      height: 25px;
+      padding: 3px 0px;
+      font-size: 12px;
+    }
+    h3 {
+      font-size: 14px;
+    }
+    .visible {
+      min-width: 100px;
+    }
+    .tglClassTwo {
+      width: 100% !important;
+    }
+    .tglClass {
+      padding-left: 8px;
+    }
+    .dltModal.modal-dialog .modal-body button {
+      width: 140px;
+      height: 27px;
+      font-size: 12px;
+    }
+  
+    .branchDetailModal {
+      padding: 0 20px;
+    }
+    .dltModal.modal-dialog .modal-body {
+      padding: 10px 10px 20px;
+    }
+    .modal-body h2 img {
+      width: 80px;
+    }
+    .dltModal.modal-dialog p {
+      font-size: 12px;
+      line-height: 19px;
+      padding-bottom: 10px;
+    }
+    .dltModal.modal-dialog {
+      padding: 0 50px;
+    }
+    .branchDetailModal {
+      padding: 0 10px;
+    }
+    .ownerpage-table .modal-body {
+      padding: 0px 0px 25px;
+    }
+    td.firstTd.modalTd {
+      padding-left: 12px;
+    }
+    .modalTd {
+      font-size: 12px;
+    }
+  
+    .modaltdTwo {
+      font-size: 12px;
+    }
+    .ownerpage-table .modal-header {
+      padding: 5px;
+    }
+    .branchDetailModal .modal-content .modal-body h2 {
+      padding-bottom: 10px;
+    }
+    .addOwner-box {
+      padding: 25px 8px;
+    }
+    .addBranchDetail .lastTd {
+      display: flex;
+    }
+    .addBranchDetail {
+      overflow-x: scroll;
+    }
+    .addOwnerBtnsSec button {
+      margin-bottom: 10px;
+    }
+    .addOwnerBtnsSec button {
+      width: 115px;
+      height: 40px;
+      font-size: 12px;
+    }
+    .rightContent .form-control {
+      width: 42% !important;
+    }
+    .addBranchDetail .branchDetailTr td {
+      padding-right: 12px;
+      font-size: 12px;
+      padding-top: 7px;
+    }
+    .addBranchDetail .branchDetailTr th {
+      font-size: 12px;
+      padding-top: 7px;
+    }
+    .addBranchDetail .lastTd {
+      margin: 0 !important;
+      padding: 5px 6px;
+    }
+    .blank {
+      display: none;
+    }
+    .addBranchModal {
+      padding: 0 15px;
+    }
+    .addBranchBtnSec .cancelBtn {
+      width: 95px !important;
+      height: 30px;
+      padding: 6px 0px;
+    }
+    .addBranchBtnSec .addBtn {
+      width: 95px !important;
+      height: 30px;
+      padding: 6px 0px;
+    }
+    .addBranchModal .modal-body {
+      padding: 30px 8px;
+    }
+    .addOwnerBtnsSec {
+      padding: 15px 0 0 0px;
+    }
+    .addBranchModal h2 {
+      padding-bottom: 25px;
+    }
+    .addBranchModal input.form-control {
+      height: 40px;
+    }
+    .addBranchModal span#basic-addon2 {
+      height: 40px;
+    }
+    .addBranchModal span#basic-addon2 {
+      max-width: 20%;
+    }
+    .icon-input input {
+      font-size: 12px;
+    }
+    aside img {
+      width: 20px;
+    }
+    aside.visible span {
+      transform: translate(0px, 1px);
+      font-size: 12px;
+    }
+    img.addPropertyLogo {
+      max-width: 28px;
+      min-width: 20px;
+    }
+    .descText {
+      max-width: 100px;
+    }
+    td.brandingColorBox button {
+      margin: 2px 0px;
+    }
+    .fileSection .file-input {
+      padding: 40px 16px 20px;
+      background-size: 90px 90px;
+    }
+    .fileSection .file-input > .button {
+      padding: 0px 3px 0px 15px;
+      margin-right: 9px;
+      margin-top: -6px;
+    }
+    .fileSection {
+      margin-bottom: 25px;
+    }
+    span.button img {
+      width: 35px;
+    }
+    textarea#exampleFormControlTextarea1 {
+      padding: 14px;
+    }
+    .brandColorBox img {
+      width: 42px;
+    }
+    .uploadSec span.label.uploadFiletext {
+      line-height: 11px;
+      width: 70px;
+      height: 20px;
+    }
+    .plusIconsec {
+      padding: 15px 0 0 0;
+    }
+    .plusIconSecTwo a {
+      padding: 5px;
+    }
+    select.form-select {
+      height: 40px;
+      font-size: 12px;
+    }
+    .editLogo {
+      max-width: 75px;
+      min-width: 60px;
+    }
+    .editFileSection .file-input > [type="file"] {
+      top: 51px;
+      right: 8px;
+      width: 40px;
+    }
+    .editFileSection {
+      height: 110px;
+    }
+    .editClick {
+      bottom: 3px;
+      right: 6px;
+    }
+  
+    .sign-Left img {
+      min-height: auto;
+    }
+    .propertyDetailSec div {
+      padding: 20px 30px;
+      height: 90px;
+      width: 100%;
+      margin: 5px 0px;
+    }
+    h1.display-1 {
+      font-size: 20px;
+      line-height: 30px;
+      padding-left: 85px;
+    }
+    .afterInputPlus {
+      margin-left: 3px !important;
+      margin-top: -20px;
+    }
+    .afterInputPlus img {
+      width: 25px;
+    }
+    .ownerInputSec span#basic-addon1 {
+      width: auto;
+      max-width: 100%;
+    }
+    .addOwner-sec {
+      padding: 43px 0px 0 0px;
+    }
+    .urlText {
+      max-width: 210px !important;
+    }
+    .detailSec {
+      padding: 15px 20px;
+    }
+    .detailContent {
+      flex-direction: column;
+    }
+    .detailContent h6 {
+      font-size: 12px;
+    }
+    .detailContentLeft,
+    .detailContentRight {
+      width: 100%;
+    }
+    .selectPassContent {
+      padding: 25px 15px;
+    }
+    .selectPassSec {
+      padding: 5px 20px 0 20px !important;
+    }
+    .selectPassContent h1 {
+      font-size: 14px;
+    }
+    .guestInput .form-select {
+      font-size: 13px;
+    }
+    .uploadCsvSec img {
+      width: 30px;
+    }
+    .uploadCsvSec .uploadSec span.label.uploadFiletext {
+      font-size: 12px;
+      width: 150px;
+      height: 30px;
+      padding: 6px 0px;
+    }
+    .uploadCsvSec .uploadSec .file-input > [type="file"] {
+      top: 125px;
+    }
+    .ownersInpuTsec button {
+      height: 30px;
+    }
+    .guestP {
+      font-size: 12px;
+    }
+    .createBtn button {
+      min-width: 180px;
+      min-height: 35px;
+      font-size: 12px;
+    }
+    .createBtn {
+      margin-top: 30px;
+    }
+    .guestFormCheck {
+      margin-bottom: 80px;
+    }
+    h4 {
+      font-size: 12px;
+    }
+    #youth {
+      margin-left: 15px;
+    }
+    aside {
+      display: none;
+    }
+    .owners-rightSec {
+      width: 100%;
+    }
+    .extraMenuBar {
+      display: inline-block;
+      padding-left: 10px;
+    }
+    .extraMenuBar button {
+      border: none;
+      background: none;
+    }
+    .extraMenuBar button i {
+      font-size: 30px;
+      color: var(--blue);
+    }
+    .mobSideBar {
+      display: none;
+      background: var(--blue);
+      color: #fff;
+      position: fixed;
+      top: 0px;
+      width: 50%;
+      min-height: 100vh;
+      border-radius: 5px;
+      z-index: 1;
+    }
+    .mobSideBar .closeIcon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 25px;
+    }
+    .mobSideBar span {
+      color: #fff;
+    }
+    .mobSideBar div {
+      padding: 50px 0px;
+    }
+    .mobSideBarSub {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 150px !important;
+    }
+    .activeTwo {
+      background-image: url(../img/sidebarBgActive.png);
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: cover;
+      height: 37px;
+      padding: 20px 19px;
+      border-radius: 5px;
+    }
+    .branchesList span,
+    .vendorsList span {
+      font-size: 18px;
+    }
+    .branchesList img {
+      width: 17px;
+      transform: translate(0px, -3px);
+    }
+  
+    .vendorsList img {
+      width: 25px;
+      transform: translate(0px, -4px);
+      margin-right: 3px;
+    }
+    .condu-double-input span#basic-addon1 {
+      min-width: 40px !important;
+      padding: 19px 18px !important;
+    }
+    .condu-triple-input span#basic-addon1 {
+      padding: 0 10px !important;
+    }
+    img.propertypic {
+      width: 25px;
+    }
+    img.uplaodPic {
+      width: 25px;
+      margin: 0 10px 0 -10px;
+    }
+    .paymentContent .condu-double-input span#basic-addon1 {
+      min-width: 60px !important;
+      padding: 19px 18px !important;
+    }
+    .cardExpire img {
+      margin-left: 4px;
+    }
+  }
+  @media (min-width: 577px) {
+    .mobSideBar {
+      display: none !important;
+    }
+  }
+  

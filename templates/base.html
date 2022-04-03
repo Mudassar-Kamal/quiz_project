@@ -1,0 +1,120 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://use.fontawesome.com/releases/v5.8.1/css/all.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <title>QuizApp</title>
+</head>
+<body>
+
+    {% block content %}
+
+    {% endblock %}
+
+
+    <!-- start footer -->
+    <footer class="landing-footer">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-lg-8">
+                <div class="mb-4">
+                    <h3 class="text-white">What Principals Say?</h3>
+                </div>
+                <p class="mb-2">
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script> © Neural IP
+                </p>
+                <p>Shahina Qutub (Principal) Headway Escola Rawalpindi
+                    It has always been a pleasure and great opportunity to take part in your events.The students’ look forward to participating with great enthusiasm as we have always won medal, Shields, and Cash Prizes. Looking forward for other events.
+
+                    Principal Convent of Jesus and Mary 4.Durand Road,Lahore</p>
+
+                    <p>
+                        This has been the first time the Convent of Jesus & Mary, Lahore has participated in the HRCA Internatinal Drawing & Essay Writing Competition. We are Delighted that 2 of our Students have Won Gold Medals and all the participants have received very impressive certificates of Participation,this has given much joy to the children. We would certainly like to support and participate in the future
+
+                        Shahina Qutub (Principal) Headway Escola Rawalpindi
+                        It has always been a pleasure and great opportunity to take part in your events.The students’ look forward to participating with great enthusiasm as we have always won medal, Shields, and Cash Prizes. Looking forward for other events.</p>
+              </div>
+
+
+            <div class="col-lg-4">
+              <div class="mb-4">
+                  <h3 class="text-white">Latest News</h3>
+              </div>
+
+              <p class="mb-2">
+                  <script>
+                      document.write(new Date().getFullYear())
+                  </script> © Neural IP
+              </p>
+              <p>Math Contest Elimination Round
+            </p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum ipsa doloremque officia unde impedit quam iure sequi dolores harum rem, officiis temporibus debitis aliquam commodi tenetur, accusamus ex inventore?</p>
+            </div>
+        </div>
+    </div>
+    </footer>
+    <!-- end footer -->
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <script>
+    $(window).scroll(function() {
+        if($(window).scrollTop() > 100) {
+            $('.navbar').addClass('navbar-sticky');
+            $('.navbar').removeClass('navbar-absolute');
+            $('.navbar').removeClass('container');
+        } else {
+            $('.navbar').addClass('navbar-absolute');
+            $('.navbar').addClass('container');
+            $('.navbar').removeClass('navbar-sticky');
+        }
+    });
+
+    $(document).ready(function () {
+  // Add minus icon for collapse element which is open by default
+  $(".collapse.show").each(function () {
+    $(this)
+      .prev(".card-header")
+      .find(".fa")
+      .addClass("fa-minus")
+      .removeClass("fa-plus");
+  });
+
+  // Toggle plus minus icon on show hide of collapse element
+  $(".collapse")
+    .on("show.bs.collapse", function () {
+      $(this)
+        .prev(".card-header")
+        .find(".fa")
+        .removeClass("fa-plus")
+        .addClass("fa-minus");
+    })
+    .on("hide.bs.collapse", function () {
+      $(this)
+        .prev(".card-header")
+        .find(".fa")
+        .removeClass("fa-minus")
+        .addClass("fa-plus");
+        });
+    });
+
+   </script>
+</body>
+</html>

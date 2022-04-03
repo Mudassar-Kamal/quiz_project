@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% include 'top_nav.html %}
+
+
+    <section class="pTopBottomAbout aboutH">
+       <div class="container">
+           <h1 class="text-white">Contact Us</h1>
+       </div>
+    </section>
+    <section class="pTopBottom bg-white pb-0">
+      <div class="container ">
+          <div class="row">
+              <div class="col-md-4">
+                  <div class="text-center">
+                        <i class="faS fa-solid fa-location-dot"></i>
+                        <p class="text-small">VISIT US</p>
+                        <p class="popinF">M-1 Suite No.2, 82-E1 Eden Tower,</p>
+                        <p class="popinF">Main Boulevard Gulberg-III Lahore.</p>
+                  </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="text-center">
+                        <i class="faS fa-solid fa-headphones"></i>
+                        <p class="text-small">LET'S TALK</p>
+                        <p class="popinF">Phone: 042-35782165, 35782247</p>
+                        <p class="popinF">Mobile: 0333-4001184</p>
+                  </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="text-center">
+                        <i class="faS fa-solid fa-envelope-open-text"></i>
+                        <p class="text-small">E-MAIL US</p>
+                        <p class="popinF">info@hrcamegaevents.com</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>
+
+    <section class="pTopBottom pt-0">
+        <div class="container">
+            <div class="contactFC">
+                 <div class="row justify-content-center">
+                        <div class="col-12 col-xl-6 col-lg-7 text-center mb-4">
+                            <h1 class="sendMT popinF">Send us a message</h1>
+                        </div>
+                        <div class="col-12">
+                            <!-- start contact form -->
+                            <form action="" method="post" novalidate="">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input class="medium-input bg-white mb-3  required" type="text" name="name" placeholder="Your name">
+                                        <input class="medium-input bg-white mb-3  required" type="email" name="email" placeholder="Your email address">
+                                        <input class="medium-input bg-white mb-3 mb-0" type="tel" name="phone" placeholder="Your mobile">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <textarea style="max-height: 190px;" class="medium-textarea bg-white h-200px" rows="8" name="comment" placeholder="Your message"></textarea>
+                                    </div>
+                                    <div class="col text-left ">
+                                    </div>
+                                    <div class="col text-center text-md-right">
+                                        <button id="project-contact-us-button" class="btn btn-medium btn-gradient-light-purple-light-orange mb-0 submit" type="submit">Send Message</button>
+                                    </div>
+                                </div>
+                                <div class="form-results d-none"></div>
+                            </form>
+                            <!-- end contact form -->
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

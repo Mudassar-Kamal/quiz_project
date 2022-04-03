@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+   
+    <!-- header -->
+{% block content %}
+{% include 'top_nav.html' %}
+
+    <section class="pTopBottomAbout aboutH">
+       <div class="container" style="display: flex;justify-content: space-between;">
+           <h1 class="text-white">Quiz</h1>
+           <h1 id="time" class="text-white">05:00</h1>
+       </div>
+    </section>
+   
+
+    <section class="pTopBottom pt-0">
+        <div class="container bg-white pt-3 p-2">
+         <div class="row mx-0 bg-light" >
+           <h4 class="p-2 m-0 popinF"><bold>If there are multiple recycle bin for a hard disk</bold></h4>
+         </div>
+         <div class="row py-3">
+           <div class="col-md-3  AnsC">
+              <img class="my-2" src="./images/b1.jpg" height="120"  />
+              <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+           </div>
+           <div class="col-md-3  AnsC">
+              <img class="my-2" src="./images/b2.jpg" height="120"  />
+              <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+           </div>
+           <div class="col-md-3  AnsC">
+               <img class="my-2" src="./images/b3.jpg" height="120"  />
+               <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+           </div>
+           <div class="col-md-3  AnsC">
+               <img class="my-2" src="./images/b4.jpg" height="120"  />
+               <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+           </div>
+         </div>
+
+         <div class="row m-0">
+           <button id="project-contact-us-button" onclick="window.location.href='./Quiz1.html'" class="ml-auto text-white btn btn-medium btn-gradient-light-purple-light-orange mb-0 submit" >Next</button>
+         </div>
+        </div>
+    </section>
+{% endblock %}

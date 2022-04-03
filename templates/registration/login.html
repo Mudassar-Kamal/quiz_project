@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+  <body>
+    <!-- wrapper start -->
+    <section class="wrapper">
+      <div class="sign-Main d-flex flex-column flex-md-row">
+        <div class="sign-Left">
+          <img src="{% static 'images/kids.jpg' %}" alt="" />
+        </div>
+        <div class="sign-Right">
+          <div class="rightheader text-center">
+            <img src="{% static 'images/schologo.png' %}" alt="logo" />
+            <h2>Lorem IPSUM</h2>
+            <h1>Login to your Account</h1>
+            <h5>Enter your Email & password to continue</h5>
+          </div>
+          <div class="rightContent">
+            <div class="input-group signInAddon">
+              <span class="input-group-text" id="basic-addon1">
+                <img src="{% static 'images/blueMail.svg' %}" alt="" />
+              </span>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Email"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+            <div class="input-group signInAddon">
+              <span class="input-group-text" id="basic-addon1">
+                <img src="{% static 'images/blueLock.svg' %}" alt="" />
+              </span>
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Password"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+          </div>
+          <div class="form-check d-flex justify-content-between rememberMeBox">
+            <div>
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="exampleCheck1"
+              />
+              <label class="form-check-label" for="exampleCheck1"
+                >Remember me</label
+              >
+            </div>
+            <div>
+              <!-- <a href="#">Forgot password?</a> -->
+            </div>
+          </div>
+          <div class="sign-btn text-center">
+            <button type="button" class="myBtn"> <a href="profile.html" style="color: white;">Login</a> </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- wrapper end -->
+

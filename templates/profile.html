@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% include 'top_nav.html %}
+    <div class="card text-center container mt-5">
+        <div class="card-header text-center" style="background-color: blue; height: 15vh;" >
+          <h4  style="color: white; margin-top: 2.5rem;">Student Name</h4>
+        
+        </div>
+        <div class="card-body">
+            <div class="row mt-4">
+                <div class="col-sm-4 text-muted"><h4>First Name</h4>
+                    <p>Student</p>
+                </div>
+                <div class="col-sm-4  text-muted" ><h4>Last Name</h4>
+                    <p>One</p>
+                </div>
+
+                <div class="col-sm-4 text-muted" ><h4>Email</h4>
+                    <p>studentone@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-sm-4 text-muted "><h4> Roll No </h4>
+                    <p>Bcsm-f22-260</p>
+                </div>
+                <div class="col-sm-4 text-muted " ><h4>School Name</h4>
+                    <p>Allama Iqbal School</p>
+                </div>
+              
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+            <button class="btn btn-primary"><a href="welcomQ.html" style="color: white;">Start Quiz</a></button>
+        </div>
+      </div>
+{% endblock %}

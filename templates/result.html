@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% include 'top_nav.html %}
+    <section class="pTopBottomAbout aboutH">
+       <div class="container">
+           <h1 class="text-white">Result</h1>
+       </div>
+    </section>
+
+
+    <section class="pTopBottom pt-0">
+        <div class="container bg-white py-3">
+            <div style="display: flex;justify-content: center;">
+               <div style="width: 60%;display: flex;justify-content: space-between;">
+                   <div style="display: flex;flex-direction: column;justify-content: center;align-items: center;">
+                       <div style="height: 120px;width: 120px;border: 1px solid green;border-radius: 50%;
+                        display: flex;justify-content: center;align-items: center;">
+                            10
+                        </div>
+                        <p class="mt-2">Correct</p>
+                   </div>
+                   <div style="display: flex;flex-direction: column;justify-content: center;align-items: center;">
+                    <div style="height: 120px;width: 120px;border: 1px solid red;border-radius: 50%;
+                            display: flex;justify-content: center;align-items: center;">
+                        10
+                    </div>
+                    <p class="mt-2">Wrong</p>
+                   </div>
+                   <div style="display: flex;flex-direction: column;justify-content: center;align-items: center;">
+                    <div style="height: 120px;width: 120px;border: 1px solid orange;border-radius: 50%;
+                            display: flex;justify-content: center;align-items: center;">
+                        10
+                    </div>
+                    <p class="mt-2">Not Answered</p>
+                    </div>
+               </div>
+            </div>
+        </div>
+    </section>
+
+    {% endblock %}

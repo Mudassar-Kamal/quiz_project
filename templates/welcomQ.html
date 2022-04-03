@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% include 'top_nav.html %}
+
+    <section class="pTopBottomAbout aboutH">
+       <div class="container">
+           <h1 class="text-white">Welcome to the Quiz App!</h1>
+           <p class="text-white popinF">You have selected the Quizl category.</p>
+       </div>
+    </section>
+   
+
+    <section class="pTopBottom pt-0">
+        <div class="container bg-white">
+         <p class="popinF lightC py-2">There will be total 10 questions for the quiz.Do your best to get maximum of them.After the quiz you will be able to see the results
+         and the <span style="color: black; font-weight: bold;">Statictics</span> of your performance right below.</p>
+         <p class="popinF lightC py-2">Good Luck!</p>
+
+         <button id="project-contact-us-button" onclick="window.location.href='./Quiz.html'" class="text-white btn btn-medium btn-gradient-light-purple-light-orange mb-0 submit" >Start the Quiz</button>
+
+         <p class="aboutT" style="font-size: 25px;"><span class="titleColor">Go to Statistics</span></p>
+        </div>
+    </section>
+{%  endblock %}
