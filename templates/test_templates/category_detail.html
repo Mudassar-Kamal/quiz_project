@@ -1,0 +1,51 @@
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+  
+<section class="dashboard-counts no-padding-bottom">
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Welcome to the Quiz App!</h1>
+            <p class="lead">You have selected the <strong>  {{category}} </strong> category.</p>
+            <hr class="my-4">
+            <p>There will be total 10 questions for the quiz.Do your best to get maximum of them.After the quiz you will be able 
+                to see the results and the <strong>Statictics</strong> of your performance right below. </p>
+           <small >Good Luck!</small> <br>
+           {% if questions %}
+           <a href="{{category.get_absolute_url}}" class="mt-4">
+               <button type="button" class="btn btn-primary btn-lg btn-block mb-4 w-100 "
+               
+            >  Start the Quiz </button></a>
+            {% else %} 
+          
+                <button type="button" class="btn btn-primary btn-lg mb-2 disabled mt-4" >  Start the Quiz </button></a>
+            <br>
+            <p class="text-danger font-weight-bold ">|Nothing added yet</p>
+                {% endif %}
+           
+
+
+
+           {% if category.scorecard_set.all %}
+               
+           
+               
+               
+           <h1 class="mb-4">
+               <a href="{% url 'performace' category.id %}">
+                   Go to Statistics
+                </a>
+            </h1>
+           
+            {% endif %}
+        </div>
+        
+
+    </div>
+
+
+
+</section>
+
+
+ 

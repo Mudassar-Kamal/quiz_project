@@ -8,10 +8,7 @@ from .models import *
 #
 # admin.site.register(QuizQuestion, QuizAdmin)
 
-admin.site.register(QuizQuestion)
-
-admin.site.register(Choice)
-
+admin.site.register(Question)
+admin.site.register(Option)
 admin.site.register(Student)
-
-admin.site.register(Result)
+admin.site.register(ScoreCard)
