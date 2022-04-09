@@ -7,7 +7,6 @@ from accounts.managers import CustomUserManager
 
 SUPER_ADMIN = 'super_admin'
 STUDENT = 'student'
-
 class User(AbstractUser):
     # username_validator = UnicodeUsernameValidator()
     ROLES = (
@@ -15,10 +14,17 @@ class User(AbstractUser):
         (STUDENT, 'Student'),
     )
     user_type = models.CharField(max_length=100, choices=ROLES, default=SUPER_ADMIN)
+    roll_number = models.CharField(max_length=100,blank=True, null=True)
     username = models.CharField(unique=True, max_length=100, blank=True, null=True)
-    roll_number = models.IntegerField(blank=True, null=True)
+    grade = models.CharField( max_length=100, blank=True, null=True)
+    group_name = models.CharField( max_length=100, blank=True, null=True)
+    category = models.CharField( max_length=100, blank=True, null=True)
     school_name = models.CharField(max_length=200, blank=True, null=True)
     campus_name = models.CharField(max_length=200, null=True, blank=True)
+    address = models.CharField( max_length=100, blank=True, null=True)
+    school_code = models.CharField( max_length=100, blank=True, null=True)
+    full_address = models.CharField( max_length=100, blank=True, null=True)
+    code = models.CharField( max_length=100, blank=True, null=True)
     readable_password = models.CharField(max_length=100, blank=True, null=True)
 
 
@@ -28,4 +34,4 @@ class User(AbstractUser):
     objects = CustomUserManager()
 
     def __str__(self):
-        return self.email
+        return self.username

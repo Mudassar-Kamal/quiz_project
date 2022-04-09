@@ -1,29 +1,41 @@
-{% extends 'base.html' %}
+{% load static %}
 
-{% block content %}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %%}">
+    <title>Category</title>
+  </head>
+  <body >
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-4" >
+        <a href="#" class="navbar-brand ml-5 mx-auto" >
+            <!-- Logo Image -->
+            <img src="{% static 'images/schologo.png' %%}" width="100" alt="" class="d-inline-block align-middle mr-2">
+        </a>
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+      
+      </nav>
 
-<section class="dashboard-header">
+<section class="dashboard-header mt-5">
 
 
 
     <div class="container">
         <div class="jumbotron">
-            <h1 class="display-4">Welcome to the Quiz App!</h1>
+            <h1 class="display-4">Welcome to the HRCA Quiz App!</h1>
             
             
             <p class="lead">Select the Category.</p>
             <hr class="my-4">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ultricies turpis finibus sollicitudin dictum.
-                 Praesent condimentum enim sed metus molestie tristique. Sed consequat magna at diam lacinia laoreet.
-                  Donec sit amet sapien in est pulvinar ultricies scelerisque et lectus. Aenean tristique
-                 a orci in iaculis. Morbi sollicitudin sagittis diam ut pellentesque. Fusce sed porttitor neque. 
-                 Aliquam porttitor sem et turpis finibus bibendum. Nunc gravida, neque id dignissim pellentesque, </p>
-           
-          </div>
-        
-          <h1>  Categories  </h1>
+            <h1>Available  Categories  </h1>
           <br>
         <div class="row ">
             <!-- Statistics -->
@@ -32,7 +44,7 @@
           <div class="statistic d-flex bg-white has-shadow">
            
             <div class="text">
-                <a href="{{category.get_category_url}}">
+                <a href="{{category.get_absolute_url}}">
                 
                 <button class="btn btn-primary">{{ category.name }}</button>
                 </a>
@@ -43,12 +55,13 @@
 </div>
 
 {% endfor %}
+          
+                </div>
+        
+         
 
 
 </div>
 </section>
-
-
-
-
-    {% endblock content %}
+</body>
+</html>

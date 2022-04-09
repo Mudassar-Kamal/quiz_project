@@ -24,7 +24,7 @@ class Student(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE,null= True, blank=True,)
 
     def __str__(self):
-        return self.user.email
+        return self.user.username
 
 class Question(models.Model):
 

@@ -16,10 +16,12 @@
         <div class="sign-Right">
           <div class="rightheader text-center">
             <img src="{% static 'images/schologo.png' %}" alt="logo" />
-            <h2>Lorem IPSUM</h2>
-            <h1>Login to your Account</h1>
+            {% comment %} <h2>Lorem IPSUM</h2> {% endcomment %}
+            <h1 class="mt-2">Login to your Account</h1>
             <h5>Enter your Email & password to continue</h5>
           </div>
+          <form method="POST" action="{% url 'acnt:login' %}">
+            {% csrf_token %}
           <div class="rightContent">
             <div class="input-group signInAddon">
               <span class="input-group-text" id="basic-addon1">
@@ -27,8 +29,9 @@
               </span>
               <input
                 type="text"
+                name="username"
                 class="form-control"
-                placeholder="Email"
+                placeholder="username"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
               />
@@ -40,6 +43,7 @@
               <input
                 type="password"
                 class="form-control"
+                name="password"
                 placeholder="Password"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
@@ -62,9 +66,10 @@
             </div>
           </div>
           <div class="sign-btn text-center">
-            <button type="button" class="myBtn"> <a href="profile.html" style="color: white;">Login</a> </button>
+            <button type="submit" class="myBtn"> Login </button>
           </div>
         </div>
+      </form>
       </div>
     </section>
 

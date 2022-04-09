@@ -1,13 +1,32 @@
-{% extends 'base.html' %}
 {% load static %}
-   
-    <!-- header -->
-{% block content %}
-{% include 'top_nav.html' %}
 
-    <section class="pTopBottomAbout aboutH">
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %%}">
+    <title>Profile Page</title>
+  </head>
+  <body >
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-4" >
+        <a href="#" class="navbar-brand ml-5 mx-auto" >
+            <!-- Logo Image -->
+            <img src="{% static 'images/schologo.png' %%}" width="100" alt="" class="d-inline-block align-middle mr-2">
+        </a>
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+      
+      </nav>
+
+    <section class="pTopBottomAbout aboutH mt-4">
        <div class="container" style="display: flex;justify-content: space-between;">
-           <h1 class="text-white">Quiz</h1>
+           <h1 class="text-white"></h1>
            <h1 id="time" class="text-white">05:00</h1>
        </div>
     </section>
@@ -16,14 +35,25 @@
     <section class="pTopBottom pt-0">
         <div class="container bg-white pt-3 p-2">
          <div class="row mx-0 bg-light" >
-           <h4 class="p-2 m-0 popinF"><bold>If there are multiple recycle bin for a hard disk</bold></h4>
+           <h4 class="p-2 m-0 popinF"><bold>{{questions.full_question|capfirst}}</bold></h4>
+           <input type="hidden"  name="q_id" value="{{questions.pk}}">
+              
+
+           <input type="hidden" id="cat_id" name="cat_id" value="{{questions.category.pk}}">
          </div>
          <div class="row py-3">
            <div class="col-md-3  AnsC">
-              <img class="my-2" src="./images/b1.jpg" height="120"  />
-              <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            {% for question in questions.option_set.all  %}
+
+            <div class="i-checks">
+              <input id="radioCustom2"  type="radio" checked="" value="{{question.option_txt }}"  name="option" class="radio-template">
+<input type="hidden" id="answer" value="{{question.option_txt}}">
+              
+              <label for="radioCustom2">{{question.option_txt }}</label>
+            </div>
+{% endfor %}
            </div>
-           <div class="col-md-3  AnsC">
+           {% comment %} <div class="col-md-3  AnsC">
               <img class="my-2" src="./images/b2.jpg" height="120"  />
               <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
            </div>
@@ -34,12 +64,83 @@
            <div class="col-md-3  AnsC">
                <img class="my-2" src="./images/b4.jpg" height="120"  />
                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-           </div>
+           </div> {% endcomment %}
          </div>
 
          <div class="row m-0">
-           <button id="project-contact-us-button" onclick="window.location.href='./Quiz1.html'" class="ml-auto text-white btn btn-medium btn-gradient-light-purple-light-orange mb-0 submit" >Next</button>
+          <button type="submit" id="submit-btn" class="btn btn-primary float-end" data-toggle="modal" data-target="#exampleModal" >Submit</button>
+           {% comment %} <button id="project-contact-us-button" onclick="window.location.href='./Quiz1.html'" class="ml-auto text-white btn btn-medium btn-gradient-light-purple-light-orange mb-0 submit" >Next</button> {% endcomment %}
          </div>
         </div>
     </section>
-{% endblock %}
+    <!-- Modal For Errors or Success -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Quiz App</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body alert " id="success">
+      
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" id="close" class="btn btn-primary">close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Ajax request to get answer on form -->
+<script>
+  
+  var form =document.getElementById('answer_form'); 
+  form.addEventListener('submit' ,  (e)=>{
+    e.preventDefault()
+    var csrftoken = $("[name=csrfmiddlewaretoken]").val();
+    url_new = "{% url 'quiz_view' questions.category.pk %}";
+   data =  JSON.stringify(
+     {
+       'q_id':form.q_id.value, 
+       'cat_id':form.cat_id.value, 
+       'option':form.option.value   
+       }
+     )
+     
+    $.ajax({
+        
+      type:'POST', 
+      url:url_new, 
+      headers:{
+        "X-CSRFToken": csrftoken
+    },
+      data:data
+      , 
+
+      success: (res) =>{
+        console.log(res)
+        const success_msg = document.getElementById('success');
+        success_msg.classList.add(res.class)
+        success_msg.innerText =  res.msg 
+
+
+        $('#close').click(function() {
+          location.reload();
+      });
+
+          }, 
+          error: (error) =>{
+            
+            $('#exampleModal').modal('show')
+  
+      }
+  })
+
+  })
+
+ </script> 
+  </body>
+  
+  </html>

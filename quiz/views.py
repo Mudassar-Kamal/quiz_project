@@ -27,7 +27,7 @@ class ContactView(View):
     def get(self , request , *args , **kwargs):
         
         return render( request,'contact_us.html')
-class ProfileView(View):
+class ProfileView(LoginRequiredMixin, View):
     def get(self , request , *args , **kwargs):
         
         return render( request,'profile.html')
