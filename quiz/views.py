@@ -1,11 +1,16 @@
+from datetime import datetime
 from django.shortcuts import render,redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import View
-from .models import Category,Question,Option,ScoreCard
+
+from quiz.utils import create_questions
+from .models import AskedQuestion, Category,Question,Option,ScoreCard, Student
 import json
 from django.http import JsonResponse
 import random
 from django.shortcuts import get_object_or_404
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 class HomeView(View):
     def get(self , request , *args , **kwargs):
@@ -31,17 +36,18 @@ class ProfileView(LoginRequiredMixin, View):
     def get(self , request , *args , **kwargs):
         
         return render( request,'profile.html')
-class IndexView(View):
+class IndexView(LoginRequiredMixin,View):
     def get(self , request , *args , **kwargs):
         categories = Category.objects.all() 
         context={
                "categories":categories
         }
         return render( request,'quiz_new.html',context=context)
-class CategoryDetailView(View):
+class CategoryDetailView(LoginRequiredMixin,View):
     def get(self , request , *args , **kwargs):
         # Initialising the sessions
         request.session['passed_qs']=[]
+        print("qss:::",request.session['passed_qs'])
         request.session['total']=0
         request.session['score']=0
         id        = self.kwargs.get("id")
@@ -53,17 +59,25 @@ class CategoryDetailView(View):
                "questions":questions
         }
         return render( request,'test_templates/category_detail.html',context=context)
-
-class QuizView(View):
+from dateutil.relativedelta import relativedelta
+class QuizView(LoginRequiredMixin,View):
     def get(self , request , *args , **kwargs):
         id    = self.kwargs.get("id")
-    # Excluding the questions stored in sessions (questions asked before)
+        # Excluding the questions stored in sessions (questions asked before)
+        current_time = datetime.now()
+
+        print("current time:",current_time)
+        end_time =current_time + relativedelta(seconds=1800)
+        print("end time:",end_time.time())
+
+
+
         items = list(Question.objects.filter( category = id).exclude(pk__in = request.session['passed_qs']))
         if items:
-            print("SESSIONS:",request.session['total'])
             random_item = random.choice(items)
             context={
-                "questions":random_item
+                "questions":random_item,
+                "end_time":end_time,
             }
             return render( request,'test_templates/quiz.html',context=context)
         else:
@@ -74,17 +88,18 @@ class QuizView(View):
                 correct_ans = Option.objects.filter(question=each_question)
                 correct_questions += correct_ans.count()
             ScoreCard.objects.create(category=cat,User=request.user,score=request.session['score'])
-        # resetting the sessions
+            # resetting the sessions
             request.session['passed_qs']=[]
             request.session['total']=0
             request.session['score']=0
             return redirect("performace",id=id)
-#   Post request for Ajax-call
+    #   Post request for Ajax-call
     def post(self , request , *args , **kwargs): 
         data    = json.loads(request.body)
         answer  = data.get("option")
         qid     = data.get("q_id")
         question   = get_object_or_404(Question,pk=qid)
+        create_questions(request.user,question)
         correct = question.correct_answer.option_txt == answer
         if correct:  
             request.session['score']= request.session['score']+1
@@ -95,7 +110,7 @@ class QuizView(View):
                 'msg':'Correct Answer, Keep it up '
             }
             return JsonResponse(safe= False , data = data)    
-# Storing the asked question in list to exclude them 
+        # Storing the asked question in list to exclude them 
         request.session['passed_qs'].append(qid)
         request.session['total']= request.session['total']+1
         data={
@@ -103,7 +118,7 @@ class QuizView(View):
             'msg':f'Wrong Answer, the correct answer is "{question.correct_answer.option_txt}"'
             }
         return JsonResponse(safe= False , data =data)  
-class PerformanceView(View):
+class PerformanceView(LoginRequiredMixin,View):
 
     def get(self,request,*args,**kwargs):
         id=self.kwargs.get("id")

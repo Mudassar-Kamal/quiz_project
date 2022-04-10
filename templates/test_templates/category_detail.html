@@ -1,53 +1,36 @@
 
 
+{% extends 'layout/index.html' %}
+{% load static %}
+{% block content %}
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-  
 <section class="dashboard-counts no-padding-bottom mt-5">
     <div class="container">
         <div class="jumbotron">
             <h1 class="display-4">Welcome to the Quiz App!</h1>
             <p class="lead">You have selected the <strong>  {{category}} </strong> category.</p>
             <hr class="my-4">
-            <p>There will be total 10 questions for the quiz.Do your best to get maximum of them.After the quiz you will be able 
+            <p>There will be total 30 questions for the quiz.Do your best to get maximum of them.After the quiz you will be able 
                 to see the results and the <strong>Statictics</strong> of your performance right below. </p>
-           <small >Good Luck!</small> <br>
-           {% if questions %}
+           <small >Good Luck!</small> <br> <br>
+       
            <a href="{{category.get_absolute_url}}" class="mt-4">
-               <button type="button" class="btn btn-primary btn-lg btn-block mb-4 w-100 "
+               <button type="button" class="btn btn-primary mb-4  "
                
-            >  Start the Quiz </button></a>
-            {% else %} 
-          
-                <button type="button" class="btn btn-primary mb-2 disabled mt-4" >  Start the Quiz </button></a>
-            <br>
-            <p class="text-danger font-weight-bold ">|Nothing added yet</p>
-                {% endif %}
+            > Let's Start</button></a>
            
-
-
-
+{% comment %} 
            {% if category.scorecard_set.all %}
-               
-           
-               
-               
            <h1 class="mb-4">
                <a href="{% url 'performace' category.id %}">
                    Go to Statistics
                 </a>
             </h1>
            
-            {% endif %}
+            {% endif %} {% endcomment %}
         </div>
-        
-
     </div>
-
-
-
 </section>
-
+{% endblock content %}
 
  

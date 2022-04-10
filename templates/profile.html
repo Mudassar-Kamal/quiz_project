@@ -101,17 +101,19 @@
                 <td>{{request.user.full_address}}</td>
               </tr>
           </table>
+          <Button class="btn btn-primary float-right"><a href="{% url 'quiz' %}" style="text-decoration: none; color: white;">Continue</a></Button>
+
         </div>
       </div>
         <div style="height: 26px"></div>
-      <div class="card shadow-sm">
+      {% comment %} <div class="card shadow-sm">
         <div class="card-header bg-transparent border-0">
-          <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Click below for  Quiz</h3>
+          <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Lets's continue</h3>
         </div>
         <div class="card-body pt-0">
-          <Button class="btn btn-primary"><a href="{% url 'quiz' %}" style="text-decoration: none; color: white;">Start Quiz</a></Button>
+          <Button class="btn btn-primary"><a href="{% url 'quiz' %}" style="text-decoration: none; color: white;">Continue</a></Button>
         </div>
-      </div>
+      </div> {% endcomment %}
     </div>
   </div>
 </div>
