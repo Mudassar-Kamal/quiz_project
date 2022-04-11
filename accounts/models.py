@@ -26,6 +26,8 @@ class User(AbstractUser):
     full_address = models.CharField( max_length=100, blank=True, null=True)
     code = models.CharField( max_length=100, blank=True, null=True)
     readable_password = models.CharField(max_length=100, blank=True, null=True)
+    active_user = models.BooleanField(default=True)
+
 
 
     USERNAME_FIELD = 'username'

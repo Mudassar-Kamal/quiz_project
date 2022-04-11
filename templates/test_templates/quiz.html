@@ -35,8 +35,9 @@
           <h3></h3>
         
           <div class="count">
-            <div id="timer"></div>
-          </div>
+            <div id="time">
+
+            </div>
         </article>
       </nav>
       
@@ -58,7 +59,7 @@
 article .count {
     padding: 5px;
 }
-article #timer{
+article #time{
   margin-top: -6px;
   border-radius: 2px;
   font-size: 25px;
@@ -80,9 +81,7 @@ article #timer{
         <!-- Breadcrumb-->
         {% if questions %}
             <br />
-            <div id="time">
-
-            </div>
+            
             <form  method="POST"  id="answer_form" >
               {% csrf_token %}
               
@@ -142,7 +141,6 @@ article #timer{
 
 <!-- Ajax request to get answer on form -->
 <script>
-  
   var form =document.getElementById('answer_form'); 
   form.addEventListener('submit' ,  (e)=>{
     e.preventDefault()
@@ -225,40 +223,87 @@ article #timer{
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script type="text/javascript">
- function startTimer(duration, display) {
-var timer = duration, minutes, seconds;
-setInterval(function () {
-    minutes = parseInt(timer / 60, 10)
-    seconds = parseInt(timer % 60, 10);
-
-    minutes = minutes < 10 ? "0" + minutes : minutes;
-    seconds = seconds < 10 ? "0" + seconds : seconds;
-
-    display.textContent = minutes + " " + " " + seconds;
-
-    if (--timer < 0) {
-        timer = duration;
-    }
-  console.log(parseInt(seconds))
-  window.localStorage.setItem("seconds",seconds)
-  window.localStorage.setItem("minutes",minutes)
-}, 1000);
-}
-
-window.onload = function () {
-  sec  = parseInt(window.localStorage.getItem("seconds"))
-  min = parseInt(window.localStorage.getItem("minutes"))
- 
-  if(parseInt(min*sec)){
-    var fiveMinutes = (parseInt(min*60)+sec);
-  }else{
-    var fiveMinutes = 60 * 5;
+  var _time = 0;
+  var _cookie_val = {hours:"", minutes:"", seconds:""};
+  
+  //change seconds to HH:MM:SS
+  //http://stackoverflow.com/questions/6312993/javascript-seconds-to-time-string-with-format-hhmmss
+  String.prototype.toHHMMSS = function () {
+      var sec_num = parseInt(this, 10);
+      var hours   = Math.floor(sec_num / 3600);
+      var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+      var seconds = sec_num - (hours * 3600) - (minutes * 60);
+      if (hours   < 10) {hours   = "0"+hours;}
+      if (minutes < 10) {minutes = "0"+minutes;}
+      if (seconds < 10) {seconds = "0"+seconds;}
+      return {hours:hours, minutes:minutes, seconds:seconds};
   }
-    // var fiveMinutes = 60 * 5;
-  display = document.querySelector('#time');
-  startTimer(fiveMinutes, display);
-};
-
+  
+  
+  //get Cookie
+  let _getCookie = function(args) {
+    var _cookie_Val = "; " + document.cookie;
+    var _splits = _cookie_Val.split("; " + args + "=");
+    if (_splits.length==2) return _splits.pop().split(";").shift();
+  }
+  
+  //set cookie
+  let _cookie = function (args) {
+    document.cookie = "_hours=" + args.args_toHHMMSS.hours;
+    document.cookie = "_minutes=" + args.args_toHHMMSS.minutes;
+    document.cookie = "_seconds=" + args.args_toHHMMSS.seconds;
+    document.cookie = "args=" + args.args;
+  };
+  
+  
+  var _timer = function (args) {
+    //set _time to args if _getCookie('args') is undefined or empty
+    var _time = _getCookie("args") || args;
+  
+    //convert val to string and set cookie
+    _cookie({args_toHHMMSS: _time.toString().toHHMMSS(), args: _time});
+  
+    //get cookie    _getCookie(_hours || _minutes || _seconds || args)
+    // console.log(_getCookie("args").toString().toHHMMSS());
+    var update_print = _getCookie("_hours") + ":" +
+                       _getCookie("_minutes") + ":" +
+                       _getCookie("_seconds");
+    document.querySelector('#time').textContent = update_print;
+  
+  
+    //start interval
+    let _interval = setInterval( function(){
+  
+      //convert val to string and set cookie
+      _cookie({args_toHHMMSS: _time.toString().toHHMMSS(), args: _time});
+  
+      //get cookie    _getCookie(_hours || _minutes || _seconds || args)
+      var update_print = _getCookie("_hours") + ":" +
+                         _getCookie("_minutes") + ":" +
+                         _getCookie("_seconds");
+      document.querySelector('#time').textContent = update_print;
+  
+  
+      //stop interval when time reaches 0
+      if(_time <= 0){
+        //finite loop
+        clearInterval(_interval);
+        cat_id = document.getElementById("cat_id").value
+        window.location.href = `/performance/${cat_id}`
+        //infinite loop
+        //_time = args;
+  
+      }else{ _time--; }
+    },1000);
+  }
+  
+  
+  
+  //onload this function will be executed
+  window.onload = () => {
+    var seconds = 1800; //enter the desired minute. e.g 300 for 5 min
+    _timer(seconds); //call _timer with argument seconds
+  };
 
   </script>
 <script>

@@ -22,6 +22,7 @@
           </div>
           <form method="POST" action="{% url 'acnt:login' %}">
             {% csrf_token %}
+            {% include 'layout/messages.html' %}
           <div class="rightContent">
             <div class="input-group signInAddon">
               <span class="input-group-text" id="basic-addon1">
@@ -66,7 +67,7 @@
             </div>
           </div>
           <div class="sign-btn text-center">
-            <button type="submit" class="myBtn"> Login </button>
+            <button type="submit" class="myBtn" style="cursor:pointer;"> Login </button>
           </div>
         </div>
       </form>

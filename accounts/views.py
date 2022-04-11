@@ -17,9 +17,12 @@ class LoginView(View):
 
         if(username != '' and password != ''):
             user = auth.authenticate(username=username, password=password)
-            if user is not None:       
-                auth.login(request, user)
-                return redirect("profile")
+            if user is not None: 
+                if user.active_user:      
+                    auth.login(request, user)
+                    return redirect("profile")
+                messages.error(request,"You cannot login again")
+                return redirect("acnt:login")
             else:
                 messages.error(request,"Invalid Credentials")
                 return redirect("acnt:login")

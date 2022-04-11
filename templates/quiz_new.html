@@ -4,14 +4,9 @@
    
 
 <section class="dashboard-header mt-5">
-
-
-
     <div class="container">
         <div class="jumbotron">
             <h1 class="display-4">Welcome to the HRCA Quiz App!</h1>
-            
-            
             <p class="lead">Select the Category.</p>
             <hr class="my-4">
             <h1>Available  Categories  </h1>
@@ -21,25 +16,15 @@
             {% for category in categories  %}
         <div class="ml-2 mb-4">
           <div class="statistic d-flex bg-white has-shadow">
-           
             <div class="text">
                 <a href="{{category.get_category_url}}">
-                
                 <button class="btn btn-primary">{{ category.name }}</button>
                 </a>
-                
           </div>
-
         </div>
 </div>
-
 {% endfor %}
-          
-                </div>
-        
-         
-
-
+  </div>
 </div>
 </section>
 {% endblock content %}

@@ -124,6 +124,11 @@ class PerformanceView(LoginRequiredMixin,View):
         id=self.kwargs.get("id")
         total_questions = Question.objects.filter( category__id= id)
         score = ScoreCard.objects.filter(category=id,User=request.user) 
+        user_obj = Student.objects.get(user=request.user)
+        print("user:::",user_obj.user.active_user)
+        user_obj.user.active_user = False
+        user_obj.user.save()
+        
         context={
             "score_card":score,
             "total_questions":total_questions,
