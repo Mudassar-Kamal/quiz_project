@@ -4,7 +4,6 @@ from .models import AskedQuestion,Student
 def create_questions(user,question_obj):
     user_obj = Student.objects.get(user=user)
     stude_obj = AskedQuestion.objects.create(student=user_obj,question = question_obj)
-    print("student:::",stude_obj)
     ans_counter = 0
     for option in question_obj.option_set.all():
         ans_counter +=1
