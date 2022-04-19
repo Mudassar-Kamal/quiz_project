@@ -65,3 +65,12 @@ class AskedQuestion(models.Model):
         return self.question.full_question
 
 
+
+class Contact(models.Model):
+    first_name = models.CharField(max_length=255, null=True, blank=True,)
+    email = models.EmailField(max_length=255, null=True, blank=True,)
+    subject = models.CharField(max_length=255, null=True, blank=True,)
+    message = models.TextField(null=True, blank=True)
+
+    def __str__(self) -> str:
+        return self.email + "=>" + self.message

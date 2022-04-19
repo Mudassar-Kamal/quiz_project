@@ -1,5 +1,6 @@
 from .models import AskedQuestion,Student
-
+from django.conf import settings
+from django.core.mail import send_mail
 
 def create_questions(user,question_obj):
     user_obj = Student.objects.get(user=user)
@@ -16,3 +17,11 @@ def create_questions(user,question_obj):
         if ans_counter == 4:
             stude_obj.option_txt_4 = option.option_txt
     stude_obj.save()
+
+
+def send_contact_email(contact_subject, contact_message,contact_email):
+    subject = contact_subject
+    message =contact_message
+    email_from = settings.EMAIL_HOST_USER
+    recipient_list = [contact_email, ]
+    send_mail( subject, message, email_from, recipient_list )

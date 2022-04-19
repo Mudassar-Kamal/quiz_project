@@ -3,7 +3,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import View
 
-from quiz.utils import create_questions
+from quiz.utils import create_questions, send_contact_email
 from .models import AskedQuestion, Category,Question,Option,ScoreCard, Student
 import json
 from django.http import JsonResponse
@@ -28,10 +28,21 @@ class ResultsView(View):
     def get(self , request , *args , **kwargs):
         
         return render( request,'result.html')
+
+from django.conf import settings
+from django.core.mail import send_mail
 class ContactView(View):
     def get(self , request , *args , **kwargs):
         
         return render( request,'contact_us.html')
+
+    def post(self , request , *args , **kwargs):
+        send_mail = send_contact_email(request.POST.get('subject'),request.POST.get('message'),request.POST.get('email'))
+        if send_mail:
+            return redirect("index")
+        return redirect('contact')
+
+    
 class ProfileView(LoginRequiredMixin, View):
     def get(self , request , *args , **kwargs):
         

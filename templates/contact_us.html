@@ -49,11 +49,12 @@
                         <div class="col-12">
                             <!-- start contact form -->
                             <form action="" method="post" novalidate="">
+                                {% csrf_token %}
                                 <div class="row">
                                     <div class="col-md-6">
                                         <input class="medium-input bg-white mb-3  required" type="text" name="name" placeholder="Your name">
                                         <input class="medium-input bg-white mb-3  required" type="email" name="email" placeholder="Your email address">
-                                        <input class="medium-input bg-white mb-3 mb-0" type="tel" name="phone" placeholder="Your mobile">
+                                        <input class="medium-input bg-white mb-3 mb-0" type="tel" name="subject" placeholder="Subject">
                                     </div>
                                     <div class="col-md-6">
                                         <textarea style="max-height: 190px;" class="medium-textarea bg-white h-200px" rows="8" name="comment" placeholder="Your message"></textarea>

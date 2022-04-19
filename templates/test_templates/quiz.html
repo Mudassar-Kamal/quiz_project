@@ -301,7 +301,7 @@ article #time{
   
   //onload this function will be executed
   window.onload = () => {
-    var seconds = 1800; //enter the desired minute. e.g 300 for 5 min
+    var seconds = 30; //enter the desired minute. e.g 300 for 5 min
     _timer(seconds); //call _timer with argument seconds
   };
 
@@ -310,7 +310,7 @@ article #time{
 
   var minutesToAdd=30;
   var currentDate = new Date();
-  var futureDate = new Date(currentDate.getTime() +1800);  
+  var futureDate = new Date(currentDate.getTime() +30);  
       var sec         = futureDate,
       countDiv    = document.getElementById("timer"),
       secpass,
